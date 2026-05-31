@@ -1,0 +1,61 @@
+/* Custom styling for U Nature */
+
+body {
+  background-color: #f0f4f8;
+  /* Light blue-grey background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom background for header and footer */
+.bg-custom-header {
+  background-color: #e2e8ea !important;
+}
+
+/* Custom background for the three columns */
+.bg-custom-col {
+  background-color: #e2e8ea !important;
+}
+
+/* Custom Accordion Styling */
+.accordion-item {
+  border: none;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+}
+
+/* Style for active accordion button (like "Природа Закарпаття") */
+.accordion-button:not(.collapsed) {
+  background-color: #a9d18e !important;
+  /* Soft green from mockup */
+  color: #1e5631 !important;
+  /* Dark green text */
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* Custom Green Button Styling */
+.btn-custom-green {
+  background-color: #a9d18e;
+  color: #ffffff;
+  border: 1px solid #a9d18e;
+}
+
+.btn-custom-green:hover,
+.btn-custom-green:focus {
+  background-color: #8db572;
+  color: #ffffff;
+  border-color: #8db572;
+}
+
+/* Ensure carousel images fit well */
+.carousel-item img {
+  border-radius: 0.25rem;
+}
+
+.btn-custom-green {
+  color: #000000
+}
