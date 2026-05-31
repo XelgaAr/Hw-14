@@ -40,8 +40,7 @@ body {
 /* Custom Green Button Styling */
 .btn-custom-green {
   background-color: #a9d18e;
-  color: #ffffff;
-  border: 1px solid #a9d18e;
+  color: #000000 border: 1px solid #a9d18e;
 }
 
 .btn-custom-green:hover,
@@ -54,8 +53,4 @@ body {
 /* Ensure carousel images fit well */
 .carousel-item img {
   border-radius: 0.25rem;
-}
-
-.btn-custom-green {
-  color: #000000
 }
