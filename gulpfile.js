@@ -1,15 +1,29 @@
-const { src, dest, series, watch } = require('gulp');
+const { src, dest, parallel, series, watch } = require('gulp');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 
+const paths = {
+  styles: {
+    src: ['node_modules/bootstrap/dist/css/bootstrap.min.css', 'css/style.css'],
+    dest: 'dist/css'
+  },
+  scripts: {
+    src: 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+    dest: 'dist/js'
+  }
+};
+
 function styles() {
-  return src([
-    'node_modules/bootstrap/dist/css/bootstrap.min.css',
-    'css/style.css'
-  ])
-  .pipe(concat('main.css'))
-  .pipe(dest('dist/css'))
-  .pipe(browserSync.stream());
+  return src(paths.styles.src)
+    .pipe(concat('main.css'))
+    .pipe(dest(paths.styles.dest))
+    .pipe(browserSync.stream());
+}
+
+function scripts() {
+  return src(paths.scripts.src)
+    .pipe(dest(paths.scripts.dest))
+    .pipe(browserSync.stream());
 }
 
 function serve(done) {
@@ -26,4 +40,7 @@ function watcher() {
   watch('*.html').on('change', browserSync.reload);
 }
 
-exports.default = series(styles, serve, watcher);
+const build = parallel(styles, scripts);
+
+exports.build = build;
+exports.default = series(build, serve, watcher);

@@ -1,5 +1,5 @@
 node_modules/
-dist/
+# dist/ — built files for GitHub Pages
 build/
 .env
 .env.local
